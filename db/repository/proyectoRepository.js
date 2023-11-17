@@ -55,7 +55,7 @@ const actualizar = (proyectoDetalle) => {
 
     return new Promise((resolve, reject) => {
                 
-        db.query('UPDATE proyecto SET nombreHeroe = ?, profesionHeroe = ?, autor = ?, descripcion = ?, imgProyecto = ? WHERE idProyecto = ?', [proyectoDetalle.nombreHeroe, proyectoDetalle.profesionHeroe, proyectoDetalle.autor, proyectoDetalle.descrpcion, proyectoDetalle.imgProyecto], (err, results) => {
+        db.query('UPDATE proyecto SET nombreHeroe = ?, profesionHeroe = ?, autor = ?, descripcion = ?, imgProyecto = ? WHERE idProyecto = ?', [proyectoDetalle.nombreHeroe, proyectoDetalle.profesionHeroe, proyectoDetalle.autor, proyectoDetalle.descripcion, proyectoDetalle.imgProyecto, proyectoDetalle.idProyecto], (err, results) => {
             if (err) {
                 console.error('Error al actualizar el proyecto', err);
                 reject(err);

@@ -14,6 +14,22 @@ const postUsuario= (req, res)=>{
     })
 }
 
+const getUsuarios= (req, res)=>{
+
+    usuarioService.leerUsuarios()
+
+    .then( array =>{        
+        let losUsuarios= []
+        array.forEach(usuario => {
+        losUsuarios.push(new UsuarioDatosResModel(usuario)) 
+        })
+            respuestasHttp.exito(req, res, losUsuarios, 200)
+        })
+    .catch(err=>{
+        respuestasHttp.error(req, res, err, "Error al leer todos los usuarios", 400)        
+    })
+}
+
 const getUsuario= (req, res)=>{
 
     usuarioService.leerUsuario(req.user.sub)
@@ -87,4 +103,4 @@ const postSignin= (req, res)=>{
     }
 }
 
-export default { postSignin, postUsuario, getDetalleUsuario, putUsuario, getUsuario, putPassword, deleteUsuario }
+export default { postSignin, postUsuario, getUsuarios, getDetalleUsuario, putUsuario, getUsuario, putPassword, deleteUsuario }

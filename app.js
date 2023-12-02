@@ -11,7 +11,7 @@ const PORT = variables.EXPRESS_PORT
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
-app.use(express.json())
+app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({extended:true}))
 
 configuracionSeguridad(app)

@@ -9,7 +9,7 @@ routerProyecto.post("/",
     proyectoController.postProyecto)
 
 routerProyecto.get("/",
-    passport.authenticate("jwt", {session: false}),
+    /* passport.authenticate("jwt", {session: false}), */
     proyectoController.getProyecto)
 
 routerProyecto.get("/:id",

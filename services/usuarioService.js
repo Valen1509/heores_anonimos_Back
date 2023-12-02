@@ -24,6 +24,25 @@ const crearUsuario= (usuario)=>{
 
 }
 
+const leerUsuarios = () => {
+
+    return new Promise((resolve, reject) => {
+
+        usuarioRepository.leer()
+
+            .then(async array => {
+                let usuarios=[]
+                for await (const usuario of array){                    
+                    usuarios.push(usuario)
+                }
+                resolve(usuarios);
+            })
+            .catch(err => {
+                reject("No es posible leer todos los usuarios")
+            })
+    })
+}
+
 const leerUsuario= (email)=>{
 
     return new Promise((resolve, reject)=>{
@@ -52,9 +71,9 @@ const actualizarUsuario=(id, usuario)=>{
         if(!usuario.nombre  || !usuario.email){
             reject("Faltan datos")
         }
-        else if(await usuarioRepository.buscarEmail(usuario.email) !==null){
+        /* else if(await usuarioRepository.buscarEmail(usuario.email) !==null){
             reject("Este email ya se encuentra registrado")
-        }
+        } */
         else{
 
             const usuarioDetalle = await usuarioRepository.detalle(id)
@@ -95,4 +114,4 @@ const eliminarUsuario = (id) =>{
     })
 }
 
-export default {crearUsuario, leerUsuario, detalleUsuario, actualizarUsuario, actualizarPassword, eliminarUsuario}
+export default {crearUsuario, leerUsuario, leerUsuarios, detalleUsuario, actualizarUsuario, actualizarPassword, eliminarUsuario}

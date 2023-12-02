@@ -15,7 +15,8 @@ const opcionesCors = {
         }
     },
     "allowedHeaders": "*",
-    "methods": "*"
+    "methods": "*",
+    "exposedHeaders": "Authorization"
 }
 
 const configuracionSeguridad =(app)=>{

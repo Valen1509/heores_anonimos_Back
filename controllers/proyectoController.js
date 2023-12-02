@@ -10,7 +10,7 @@ const postProyecto= (req, res)=>{
         respuestasHttp.exito(req, res, new ProyectoDatosResModel(proyecto), 201)
     })
     .catch(err=>{
-        respuestasHttp.error(req, res, err, "Error al crear el proyecto", 400)
+        respuestasHttp.error(req, res, err, "Error al crear el proyecto", 400)        
     })
 }
 

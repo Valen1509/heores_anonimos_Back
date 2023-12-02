@@ -12,6 +12,10 @@ routerUsuario.get("/",
     passport.authenticate("jwt", {session: false}),
     usuarioController.getUsuario)
 
+routerUsuario.get("/usuarios",
+    passport.authenticate("jwt", {session: false}),
+    usuarioController.getUsuarios)
+
 routerUsuario.get("/:id",
     passport.authenticate("jwt", {session: false}),
     usuarioController.getDetalleUsuario)

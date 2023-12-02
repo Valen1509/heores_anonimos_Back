@@ -7,11 +7,8 @@ const crearProyecto = (proyecto, email) => {
 
         if(!proyecto.nombreHeroe || !proyecto.profesionHeroe || !proyecto.autor || !proyecto.descripcion || !proyecto.imgProyecto){
             reject("Faltan datos");
-        } else {
-            
-            proyecto.nombreHeroe = proyecto.nombreHeroe.toLowerCase();
-            proyecto.idProyecto = crypto.randomUUID();
-            
+        } else {                        
+            proyecto.idProyecto = crypto.randomUUID();            
             proyectoRepository.crear(proyecto);
             resolve(proyecto);
             
@@ -57,6 +54,7 @@ const actualizarProyecto = (id, proyecto) => {
             proyectoDetalle.autor = proyecto.autor
             proyectoDetalle.descripcion = proyecto.descripcion
             proyectoDetalle.imgProyecto = proyecto.imgProyecto
+            proyectoDetalle.imgHeroe = proyecto.imgHeroe
             const proyectoData = await proyectoRepository.actualizar(proyectoDetalle)
 
             resolve(proyectoData)

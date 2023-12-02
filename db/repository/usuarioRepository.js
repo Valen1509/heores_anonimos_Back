@@ -21,7 +21,7 @@ const leer= ()=>{
             console.error('Error al obtener los usuarios', err)
             reject(err)
         } else {
-            console.log('Usuarios obtenidos con éxito');
+            /* console.log('Usuarios obtenidos con éxito'); */
             resolve(results)
         }
     })
@@ -65,7 +65,7 @@ const detalle=(id)=>{
         reject(err)
       }
       else{
-        console.log('usuario obtenido con éxito')
+        /* console.log('usuario obtenido con éxito') */
         resolve(results[0])
       }
     })
@@ -94,7 +94,7 @@ const actualizar=(usuarioDetalle)=>{
             console.error('Error al obtener el usuario', err)
             reject(err)
           } else {
-            console.log('Usuario obtenido con exito')
+            /* console.log('Usuario obtenido con exito') */
             resolve(results[0])
           }
         })

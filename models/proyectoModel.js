@@ -4,6 +4,7 @@ function ProyectoCrearRequestModel(proyecto){
     this.autor = proyecto.autor
     this.descripcion = proyecto.descripcion
     this.imgProyecto = proyecto.imgProyecto
+    this.imgHeroe = proyecto.imgHeroe
 }
 
 function ProyectoDatosResModel(proyecto){
@@ -13,6 +14,7 @@ function ProyectoDatosResModel(proyecto){
     this.autor = proyecto.autor
     this.descripcion = proyecto.descripcion
     this.imgProyecto = proyecto.imgProyecto
+    this.imgHeroe = proyecto.imgHeroe
 }
 
 function ProyectoActualizarReqModel(proyecto){
@@ -21,6 +23,7 @@ function ProyectoActualizarReqModel(proyecto){
     this.autor = proyecto.autor
     this.descripcion = proyecto.descripcion
     this.imgProyecto = proyecto.imgProyecto
+    this.imgHeroe = proyecto.imgHeroe
 }
 
 export { ProyectoCrearRequestModel, ProyectoDatosResModel, ProyectoActualizarReqModel }

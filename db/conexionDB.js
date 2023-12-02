@@ -1,13 +1,14 @@
 import mysql2 from "mysql2"
 import dotenv from "dotenv"
 
-dotenv.config() // Cargar variables de entorno desde un archivo .env
+dotenv.config() // Cargar variables de entorno desde el archivo .env
 
 const db = mysql2.createConnection({
     host: process.env.DATABASE_HOST,
     user: process.env.DATABASE_USER,
     password: process.env.DATABASE_PASSWORD,
-    database: process.env.DATABASE
+    database: process.env.DATABASE,
+    connectTimeout: 90000,
 })
 
 export const conectar = ()=>{
